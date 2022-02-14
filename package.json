@@ -5,8 +5,12 @@
   "license": "",
   "scripts": {
     "build": "remix build",
+    "check-format": "npm run prettier -- --list-different",
+    "check-types": "tsc",
     "dev": "cross-env NODE_ENV=development netlify dev",
-    "postinstall": "remix setup node"
+    "format": "npm run prettier -- --write",
+    "postinstall": "remix setup node",
+    "prettier": "prettier \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|html|md|mdx|graphql)\" --ignore-path .gitignore"
   },
   "dependencies": {
     "@netlify/functions": "^0.10.0",
