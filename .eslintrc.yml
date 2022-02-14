@@ -1,0 +1,31 @@
+extends:
+  - 'eslint:recommended'
+  - 'plugin:react/recommended'
+  - 'plugin:react-hooks/recommended'
+  - 'plugin:react/jsx-runtime'
+  - 'plugin:@typescript-eslint/recommended'
+  - prettier # should come last
+
+globals:
+  exports: false
+  module: false
+  process: false
+  require: false
+
+parser: '@typescript-eslint/parser'
+
+parserOptions:
+  ecmaVersion: 2020
+  sourceType: module
+
+plugins:
+  - '@typescript-eslint'
+
+rules:
+  '@typescript-eslint/no-var-requires': off
+  react-hooks/exhaustive-deps: warn
+  react-hooks/rules-of-hooks: error
+
+settings:
+  react:
+    version: detect

@@ -1,7 +1,7 @@
 {
-  "private": true,
-  "name": "remix-app-template",
-  "description": "",
+  "private": false,
+  "name": "mu-remix",
+  "description": "The ninth iteration of michaeluloth.com. Built with Remix, Tailwind CSS and the Notion API.",
   "license": "",
   "scripts": {
     "build": "remix build",
@@ -9,8 +9,10 @@
     "check-types": "tsc",
     "dev": "cross-env NODE_ENV=development netlify dev",
     "format": "npm run prettier -- --write",
+    "lint": "eslint '**/*.{js,jsx,ts,tsx}' --ignore-path .gitignore",
     "postinstall": "remix setup node",
-    "prettier": "prettier \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|html|md|mdx|graphql)\" --ignore-path .gitignore"
+    "prettier": "prettier \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|html|md|mdx|graphql)\" --ignore-path .gitignore",
+    "validate": "yarn format && npm-run-all --parallel check-types lint"
   },
   "dependencies": {
     "@netlify/functions": "^0.10.0",
@@ -25,7 +27,17 @@
     "@remix-run/dev": "^1.1.3",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
     "cross-env": "^7.0.3",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^7.0.0",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "^2.5.1",
     "typescript": "^4.1.2"
   },
