@@ -1,0 +1,4 @@
+.cache
+.netlify
+public
+package-lock.json
